@@ -7,6 +7,25 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:714438199574:android:a21c75f7e04d6b1dc4e837",
+        "android_client_info": {
+          "package_name": "com.example.sports_cbr"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnNlD6QT-Fd5bXX3XiDNtIYGgzhKdxVs0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:714438199574:android:b512659666882f08c4e837",
         "android_client_info": {
           "package_name": "com.example.sportscbr"

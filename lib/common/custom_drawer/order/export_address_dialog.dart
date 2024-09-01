@@ -39,6 +39,7 @@ class ExportAddressDialog extends StatelessWidget {
         ElevatedButton(
           style: flatButtonStyle,
           onPressed: () async {
+            Navigator.of(context).pop();
             await screenshotController.capture().then((Uint8List? image) async {
               await ImageGallerySaver.saveImage(image!);
             });
