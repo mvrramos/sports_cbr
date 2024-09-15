@@ -1,8 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sportscbr/helpers/validators.dart';
 import 'package:sportscbr/models/data_user.dart';
 import 'package:sportscbr/models/user_manager.dart';
+import 'package:sportscbr/screens/login/common/reset_password_dialog.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
@@ -70,7 +72,12 @@ class LoginScreen extends StatelessWidget {
                       alignment: Alignment.centerRight,
                       child: TextButton(
                         onPressed: () {
-                          // FirebaseAuth.instance.sendPasswordResetEmail(email: emailController);
+                          FirebaseAuth.instance.sendPasswordResetEmail(email: emailController.text);
+
+                          showDialog(
+                            context: context,
+                            builder: (_) => SendPasswordDialog(),
+                          );
                         },
                         style: TextButton.styleFrom(
                           foregroundColor: Colors.black,
@@ -105,7 +112,7 @@ class LoginScreen extends StatelessWidget {
                                     Navigator.of(context).pop();
                                   });
                                 }
-                                },
+                              },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: const Color.fromARGB(255, 73, 5, 182),
                           disabledBackgroundColor: Colors.black54,
@@ -117,7 +124,15 @@ class LoginScreen extends StatelessWidget {
                                 style: TextStyle(color: Colors.white, fontSize: 18),
                               ),
                       ),
-                    )
+                    ),
+                    SizedBox(height: 20),
+                    // SignInButton(
+                    //   Buttons.Google,
+                    //   text: "Entrar com o Google",
+                    //   onPressed: () {
+                    //     userManager.googleLogin();
+                    //   },
+                    // ),
                   ],
                 );
               },

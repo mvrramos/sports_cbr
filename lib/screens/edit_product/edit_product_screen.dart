@@ -24,6 +24,16 @@ class EditProductScreen extends StatelessWidget {
           foregroundColor: Colors.white,
           title: Text(editing ? "Editar produto" : "Cadastrar produto"),
           centerTitle: true,
+          actions: [
+            if (editing)
+              IconButton(
+                onPressed: () {
+                  context.read<ProductManager>().delete(product);
+                  Navigator.of(context).pop();
+                },
+                icon: Icon(Icons.delete),
+              )
+          ],
         ),
         body: Form(
           key: formKey,

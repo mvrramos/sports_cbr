@@ -13,7 +13,7 @@ class CartManager extends ChangeNotifier {
   DataUser? dataUser;
   Address? address;
 
-  num productsPrice = 0;
+  num productsPrice = 200;
   num deliveryPrice = 0;
   num get totalPrice => productsPrice + deliveryPrice;
 

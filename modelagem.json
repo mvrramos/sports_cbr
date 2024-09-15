@@ -1,0 +1,46 @@
+{
+    "users":{
+        "2HSmBBcGUrYKVjo40jYeIO4Zfc82": {
+            "address": {
+                "city": "Brasilia",
+                "complement": "",
+                "district": "Setor Habitacional",
+                "lat": "-15.8111982",
+                "lomg": "-48.0435267",
+                "number": "2",
+                "state": "DF",
+                "street": "Rua 4",
+                "zipCode": "725989"
+            },
+            "email": "admin@abcmail.com",
+            "name": "Sports CBR"
+        },
+        "uyZJzxtBo9ZbDI6ZppEfLdnC3Vz2": {
+            "cart": {
+                "GK4PrR14EuR29NIyXRXy": {
+                    "pid": "xZVBvF63ekl0hf6X7vyV",
+                    "quantity": "1",
+                    "size": "P"
+                }
+            },
+            "email": "marcos@abcmail.com",
+            "name": "Marcos Teste"
+        },
+        "yzRrh0cmo5cKHPf1FBXftyVei782": {
+            "address": {
+                "city": "Brasilia",
+                "complement": "",
+                "district": "Setor Habitacional",
+                "lat": "-15.8111982",
+                "lomg": "-48.0435267",
+                "number": "2",
+                "state": "DF",
+                "street": "Rua 4",
+                "zipCode": "725989"
+            },
+            "email": "mvrr1232@gmail.com",
+            "name": "Marcos Ramos"
+        }
+    }
+}
+

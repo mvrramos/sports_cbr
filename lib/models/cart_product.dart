@@ -97,6 +97,7 @@ class CartProduct extends ChangeNotifier {
   }
 
   bool get hasStock {
+    if (product != null && product!.deleted!) return false;
     final size = itemSize;
 
     if (size == null) return false;

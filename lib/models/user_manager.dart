@@ -87,4 +87,6 @@ class UserManager extends ChangeNotifier {
   }
 
   bool get adminEnabled => dataUser != null && dataUser!.admin;
+
+  void googleLogin() {}
 }

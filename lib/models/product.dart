@@ -7,7 +7,7 @@ import 'package:sportscbr/models/item_size.dart';
 import 'package:uuid/uuid.dart';
 
 class Product extends ChangeNotifier {
-  Product({this.pid, this.name, this.description, this.category, this.images, this.sizes}) {
+  Product({this.pid, this.name, this.description, this.images, this.sizes, this.deleted = false}) {
     images = images ?? [];
     sizes = sizes ?? [];
   }
@@ -16,16 +16,16 @@ class Product extends ChangeNotifier {
     pid = doc.id;
     name = doc['name'];
     description = doc['description'];
-    // category = doc['category'];
+    deleted = (doc['deleted'] ?? false);
     images = List<String>.from(doc['images'] as List<dynamic>);
     sizes = (doc['sizes'] as List<dynamic>).map((s) => ItemSize.fromMap(s as Map<String, dynamic>)).toList();
   }
   String? pid;
   String? name;
   String? description;
-  String? category;
   List<String>? images;
   List<ItemSize>? sizes;
+  bool? deleted;
 
   bool _loading = false;
   bool get loading => _loading;
@@ -59,13 +59,13 @@ class Product extends ChangeNotifier {
   }
 
   bool get hasStock {
-    return totalStock > 0;
+    return totalStock > 0 && !deleted!;
   }
 
   num get basePrice {
     num lowest = double.infinity;
     for (final size in sizes!) {
-      if (size.price! < lowest && size.hasStock) {
+      if (size.price! < lowest) {
         lowest = size.price!;
       }
     }
@@ -90,9 +90,9 @@ class Product extends ChangeNotifier {
     final Map<String, dynamic> data = {
       'name': name,
       'description': description,
-      // 'category': category,
       'images': images,
       'sizes': exportSizeList(),
+      'deleted': deleted,
     };
 
     if (pid == null) {
@@ -142,10 +142,16 @@ class Product extends ChangeNotifier {
       pid: pid,
       name: name,
       description: description,
-      category: category,
       images: List.from(images!),
       sizes: sizes!.map((e) => e.clone()).toList(),
+      deleted: deleted,
     );
+  }
+
+  void delete() {
+    firestoreRef.update({
+      'deleted': true
+    });
   }
 
   @override

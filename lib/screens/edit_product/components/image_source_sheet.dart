@@ -8,15 +8,19 @@ class ImageSourceSheet extends StatelessWidget {
   ImageSourceSheet(this.onImageSelected, {super.key});
 
   final ImagePicker picker = ImagePicker();
-
   final Function(File) onImageSelected;
 
-  Future<void> editImage(String path) async {
-    final CroppedFile? croppedFile = await ImageCropper.platform.cropImage(sourcePath: path);
-
-    if (croppedFile != null) {
-      final File imageFile = File(croppedFile.path);
-      onImageSelected(imageFile);
+  Future<void> editImage(String path, BuildContext context) async {
+    try {
+      final CroppedFile? croppedFile = await ImageCropper.platform.cropImage(sourcePath: path);
+      if (croppedFile != null) {
+        final File imageFile = File(croppedFile.path);
+        onImageSelected(imageFile);
+      }
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Erro ao editar imagem: $e')),
+      );
     }
   }
 
@@ -31,16 +35,20 @@ class ImageSourceSheet extends StatelessWidget {
             ElevatedButton(
               onPressed: () async {
                 final XFile? file = await picker.pickImage(source: ImageSource.camera);
-                editImage(file!.path);
-                Navigator.of(context).pop();
+                if (file != null) {
+                  await editImage(file.path, context);
+                  Navigator.of(context).pop(); // Fechar o BottomSheet
+                }
               },
               child: const Text("Câmera"),
             ),
             ElevatedButton(
               onPressed: () async {
                 final XFile? file = await picker.pickImage(source: ImageSource.gallery);
-                editImage(file!.path);
-                Navigator.of(context).pop();
+                if (file != null) {
+                  await editImage(file.path, context);
+                  Navigator.of(context).pop(); // Fechar o BottomSheet
+                }
               },
               child: const Text("Galeria"),
             ),
