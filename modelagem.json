@@ -1,46 +1,23 @@
 {
-    "users":{
-        "2HSmBBcGUrYKVjo40jYeIO4Zfc82": {
-            "address": {
-                "city": "Brasilia",
-                "complement": "",
-                "district": "Setor Habitacional",
-                "lat": "-15.8111982",
-                "lomg": "-48.0435267",
-                "number": "2",
-                "state": "DF",
-                "street": "Rua 4",
-                "zipCode": "725989"
-            },
-            "email": "admin@abcmail.com",
-            "name": "Sports CBR"
+    "store": {
+        "address": {
+            "city": "Brasília",
+            "complement": "",
+            "district": "Taguatinga",
+            "lat": "-15.8082479",
+            "long": "-48.0982542",
+            "number": "210",
+            "state": "DF",
+            "street": "Hélio Prates",
+            "zipCode": "72145-450"
         },
-        "uyZJzxtBo9ZbDI6ZppEfLdnC3Vz2": {
-            "cart": {
-                "GK4PrR14EuR29NIyXRXy": {
-                    "pid": "xZVBvF63ekl0hf6X7vyV",
-                    "quantity": "1",
-                    "size": "P"
-                }
-            },
-            "email": "marcos@abcmail.com",
-            "name": "Marcos Teste"
+        "image": "https://acdn.mitiendanube.com/stores/003/220/744/themes/common/ogimage-1998492702-1693235515-7f2902683d6cc846fb5e72872875ae6d1693235515.png?0",
+        
+        "name": "Loja 1 - JK Shopping",
+        "opening": {
+            "monfri": "08:00-18:00"
         },
-        "yzRrh0cmo5cKHPf1FBXftyVei782": {
-            "address": {
-                "city": "Brasilia",
-                "complement": "",
-                "district": "Setor Habitacional",
-                "lat": "-15.8111982",
-                "lomg": "-48.0435267",
-                "number": "2",
-                "state": "DF",
-                "street": "Rua 4",
-                "zipCode": "725989"
-            },
-            "email": "mvrr1232@gmail.com",
-            "name": "Marcos Ramos"
-        }
+        "phone": "(61)99999-9999"
     }
 }
 

@@ -7,8 +7,8 @@ import 'package:sportscbr/orders/orders_screen.dart';
 import 'package:sportscbr/screens/admin_orders/admin_orders_screen.dart';
 import 'package:sportscbr/screens/admin_users/admin_users_screen.dart';
 import 'package:sportscbr/screens/home/home_screen.dart';
-import 'package:sportscbr/screens/stores/stores_screen.dart';
 import 'package:sportscbr/screens/products/products_screen.dart';
+import 'package:sportscbr/screens/stores/stores_screen.dart';
 
 class BaseScreen extends StatefulWidget {
   const BaseScreen({super.key});
@@ -42,7 +42,7 @@ class _BaseScreenState extends State<BaseScreen> {
               const HomeScreen(),
               const ProductsScreen(),
               const OrdersScreen(),
-              const StoreScreen(),
+              const StoresScreen(),
               if (userManager.adminEnabled) ...[
                 const AdminUsersScreen(),
                 const AdminOrdersScreen()

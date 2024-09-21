@@ -9,7 +9,7 @@ import 'package:sportscbr/models/orders.dart';
 import 'package:sportscbr/models/orders_manager.dart';
 import 'package:sportscbr/models/product.dart';
 import 'package:sportscbr/models/product_manager.dart';
-import 'package:sportscbr/models/store_manager.dart';
+import 'package:sportscbr/models/stores_manager.dart';
 import 'package:sportscbr/models/user_manager.dart';
 import 'package:sportscbr/screens/address/address_screen.dart';
 import 'package:sportscbr/screens/base/base_screen.dart';
@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => UserManager(), lazy: false),
         ChangeNotifierProvider(create: (_) => ProductManager(), lazy: false),
         ChangeNotifierProvider(create: (_) => HomeManager(), lazy: false),
-        ChangeNotifierProvider(create: (_) => StoreManager()),
+        ChangeNotifierProvider(create: (_) => StoresManager()),
         ChangeNotifierProxyProvider<UserManager, CartManager>(
           create: (_) => CartManager(),
           lazy: false,
