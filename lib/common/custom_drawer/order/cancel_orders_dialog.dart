@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sportscbr/models/orders.dart';
+import 'package:sportscbr/models/orders/orders.dart';
 
 class CancelOrdersDialog extends StatelessWidget {
   const CancelOrdersDialog(this.orders, {super.key});

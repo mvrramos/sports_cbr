@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:sportscbr/models/cart_product.dart';
+import 'package:sportscbr/models/cart/cart_product.dart';
 
 class OrdersProductTile extends StatelessWidget {
   const OrdersProductTile(this.cartProduct, {super.key});

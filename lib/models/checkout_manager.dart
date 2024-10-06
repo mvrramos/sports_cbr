@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:sportscbr/models/cart_manager.dart';
-import 'package:sportscbr/models/orders.dart';
-import 'package:sportscbr/models/product.dart';
+import 'package:sportscbr/models/cart/cart_manager.dart';
+import 'package:sportscbr/models/orders/orders.dart';
+import 'package:sportscbr/models/product/product.dart';
 
 class CheckoutManager extends ChangeNotifier {
   CartManager cartManager = CartManager();
@@ -17,7 +17,7 @@ class CheckoutManager extends ChangeNotifier {
   void updateCart(CartManager cartManager) {
     this.cartManager = cartManager;
 
-    print(cartManager.productsPrice);
+    // print(cartManager.productsPrice);
   }
 
   Future<void> checkout({Function? onStockFail, Function? onSuccess}) async {

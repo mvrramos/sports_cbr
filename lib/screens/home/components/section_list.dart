@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sportscbr/models/home_manager.dart';
-import 'package:sportscbr/models/section.dart';
+import 'package:sportscbr/models/section/section.dart';
 import 'package:sportscbr/screens/home/components/add_tile_widget.dart';
 import 'package:sportscbr/screens/home/components/item_tile.dart';
 import 'package:sportscbr/screens/home/components/section_header.dart';

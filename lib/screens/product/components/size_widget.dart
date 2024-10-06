@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sportscbr/models/item_size.dart';
-import 'package:sportscbr/models/product.dart';
+import 'package:sportscbr/models/product/product.dart';
 
 class SizeWidget extends StatelessWidget {
   const SizeWidget(this.itemSize, {super.key});

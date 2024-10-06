@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sportscbr/common/login_card.dart';
 import 'package:sportscbr/common/price_card.dart';
-import 'package:sportscbr/models/cart_manager.dart';
+import 'package:sportscbr/models/cart/cart_manager.dart';
 import 'package:sportscbr/screens/cart/components/cart_tile.dart';
 import 'package:sportscbr/screens/cart/components/empty_card.dart';
 

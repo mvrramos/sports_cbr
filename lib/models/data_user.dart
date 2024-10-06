@@ -2,14 +2,15 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:sportscbr/models/address.dart';
 
 class DataUser {
-  DataUser({this.name, this.email, this.password, this.confirmPassword, this.id});
+  DataUser({this.name, this.email, this.password, this.confirmPassword, this.id, this.cpf});
 
   DataUser.fromDocument(DocumentSnapshot document) {
-    id = document.id;
     final data = document.data() as Map<String, dynamic>;
 
+    id = document.id;
     name = document['name'];
     email = document['email'];
+    cpf = document['cpf'];
     if (data.containsKey('address')) {
       address = Address.fromMap(document['address'] as Map<String, dynamic>);
     }
@@ -18,6 +19,7 @@ class DataUser {
   String? id;
   String? name;
   String? email;
+  String? cpf;
   String? password;
   String? confirmPassword;
 
@@ -38,11 +40,17 @@ class DataUser {
     saveData();
   }
 
+  void setCpf(String? cpf) {
+    this.cpf = cpf;
+    saveData();
+  }
+
   Map<String, dynamic> toMap() {
     return {
       'name': name,
       'email': email,
       if (address != null) 'address': address!.toMap(),
+      if (cpf != null) 'cpf': cpf,
     };
   }
 }

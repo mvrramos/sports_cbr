@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sportscbr/models/product.dart';
-import 'package:sportscbr/models/product_manager.dart';
+import 'package:sportscbr/models/product/product.dart';
+import 'package:sportscbr/models/product/product_manager.dart';
 import 'package:sportscbr/screens/edit_product/components/images_form.dart';
 import 'package:sportscbr/screens/edit_product/components/sizes_form.dart';
 

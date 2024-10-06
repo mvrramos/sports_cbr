@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sportscbr/common/price_card.dart';
-import 'package:sportscbr/models/cart_manager.dart';
+import 'package:sportscbr/models/cart/cart_manager.dart';
 import 'package:sportscbr/screens/address/components/address_card.dart';
 
 class AddressScreen extends StatelessWidget {
@@ -26,6 +26,11 @@ class AddressScreen extends StatelessWidget {
                 onPressed: cartManager.isAddressValid
                     ? () {
                         Navigator.of(context).pushNamed('/checkout');
+                        // Navigator.of(context).pushReplacement(
+                        //   MaterialPageRoute(
+                        //     builder: (context) => PaymentBricksScreen(),
+                        //   ),
+                        // );
                       }
                     : null,
               );

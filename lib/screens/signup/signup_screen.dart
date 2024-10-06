@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sportscbr/helpers/validators.dart';
 import 'package:sportscbr/models/data_user.dart';
-import 'package:sportscbr/models/user_manager.dart';
+import 'package:sportscbr/models/user/user_manager.dart';
 
 class SignUpScreen extends StatelessWidget {
   SignUpScreen({super.key});

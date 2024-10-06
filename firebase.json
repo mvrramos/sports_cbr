@@ -1,1 +1,37 @@
-{"flutter":{"platforms":{"android":{"default":{"projectId":"sportscbr-86ec8","appId":"1:714438199574:android:a21c75f7e04d6b1dc4e837","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"sportscbr-86ec8","configurations":{"android":"1:714438199574:android:a21c75f7e04d6b1dc4e837","ios":"1:714438199574:ios:45d5776da3445fd2c4e837"}}}}}}
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "sportscbr-86ec8",
+          "appId": "1:714438199574:android:a21c75f7e04d6b1dc4e837",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "sportscbr-86ec8",
+          "configurations": {
+            "android": "1:714438199574:android:a21c75f7e04d6b1dc4e837",
+            "ios": "1:714438199574:ios:45d5776da3445fd2c4e837"
+          }
+        }
+      }
+    }
+  },
+  "functions": {
+    "source": "functions",
+    "codebase": "default",
+    "ignore": [
+      "node_modules",
+      ".git",
+      "firebase-debug.log",
+      "firebase-debug.*.log",
+      "*.local"
+    ],
+    "predeploy": [
+      "npm --prefix \"$RESOURCE_DIR\" run lint",
+      "npm --prefix \"$RESOURCE_DIR\" run build"
+    ]
+  }
+}

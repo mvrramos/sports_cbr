@@ -1,9 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sportscbr/models/cart_manager.dart';
-import 'package:sportscbr/models/product.dart';
-import 'package:sportscbr/models/user_manager.dart';
+import 'package:sportscbr/models/cart/cart_manager.dart';
+import 'package:sportscbr/models/product/product.dart';
+import 'package:sportscbr/models/user/user_manager.dart';
 import 'package:sportscbr/screens/product/components/size_widget.dart';
 
 class ProductScreen extends StatelessWidget {

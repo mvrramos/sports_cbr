@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sportscbr/common/custom_icon_button.dart';
 import 'package:sportscbr/models/item_size.dart';
-import 'package:sportscbr/models/product.dart';
+import 'package:sportscbr/models/product/product.dart';
 import 'package:sportscbr/screens/edit_product/components/edit_item_size.dart';
 
 class SizesForm extends StatelessWidget {

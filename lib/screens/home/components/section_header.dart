@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sportscbr/common/custom_icon_button.dart';
 import 'package:sportscbr/models/home_manager.dart';
-import 'package:sportscbr/models/section.dart';
+import 'package:sportscbr/models/section/section.dart';
 
 class SectionHeader extends StatelessWidget {
   const SectionHeader(this.section, {super.key});

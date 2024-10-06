@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sportscbr/models/home_manager.dart';
-import 'package:sportscbr/models/section.dart';
+import 'package:sportscbr/models/section/section.dart';
 
 class AddSectionWidget extends StatelessWidget {
   const AddSectionWidget(this.homeManager, {super.key});

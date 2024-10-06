@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sportscbr/common/custom_icon_button.dart';
-import 'package:sportscbr/models/cart_product.dart';
+import 'package:sportscbr/models/cart/cart_product.dart';
 
 class CartTile extends StatelessWidget {
   const CartTile(this.cartProduct, {super.key});

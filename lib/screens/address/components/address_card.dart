@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sportscbr/models/address.dart';
-import 'package:sportscbr/models/cart_manager.dart';
+import 'package:sportscbr/models/cart/cart_manager.dart';
 import 'package:sportscbr/screens/address/components/address_input_field.dart';
 import 'package:sportscbr/screens/address/components/cep_input_field.dart';
 

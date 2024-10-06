@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:sportscbr/models/product.dart';
+import 'package:sportscbr/models/product/product.dart';
 import 'package:sportscbr/screens/edit_product/components/image_source_sheet.dart';
 
 class ImagesForm extends StatelessWidget {

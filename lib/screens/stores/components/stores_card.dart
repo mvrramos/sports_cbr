@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:map_launcher/map_launcher.dart';
 import 'package:sportscbr/common/custom_icon_button.dart';
-import 'package:sportscbr/models/stores.dart';
+import 'package:sportscbr/models/stores/stores.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class StoresCard extends StatelessWidget {
@@ -18,9 +20,67 @@ class StoresCard extends StatelessWidget {
           return Colors.green;
         case StoreStatus.closing:
           return Colors.yellow;
-
         default:
           return Colors.green;
+      }
+    }
+
+    void showError(BuildContext context) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            "Esta função não está disponível",
+            style: const TextStyle(fontSize: 18),
+          ),
+          backgroundColor: Colors.red,
+        ),
+      );
+    }
+
+    Future<void> openPhone() async {
+      final phoneUrl = 'tel:${store.cleanPhone}';
+      if (await canLaunch(phoneUrl)) {
+        await launch(phoneUrl);
+      } else {
+        showError(context);
+      }
+    }
+
+    Future<void> openMap() async {
+      try {
+        final availableMaps = await MapLauncher.installedMaps;
+
+        showModalBottomSheet(
+          context: context,
+          builder: (_) {
+            return SafeArea(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  for (final map in availableMaps)
+                    ListTile(
+                      onTap: () {
+                        map.showMarker(
+                          coords: Coords(store.address!.lat!, store.address!.long!),
+                          title: store.name!,
+                          description: store.addressText,
+                        );
+                        Navigator.of(context).pop();
+                      },
+                      title: Text(map.mapName),
+                      leading: SvgPicture.asset(
+                        map.icon,
+                        height: 30,
+                        width: 30,
+                      ),
+                    ),
+                ],
+              ),
+            );
+          },
+        );
+      } catch (e) {
+        showError(context);
       }
     }
 
@@ -55,7 +115,7 @@ class StoresCard extends StatelessWidget {
                       ),
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ),
@@ -96,7 +156,7 @@ class StoresCard extends StatelessWidget {
                     CustomIconButton(
                       Icons.map,
                       Colors.black54,
-                      () {},
+                      openMap,
                     ),
                     CustomIconButton(
                       Icons.phone,
@@ -111,15 +171,5 @@ class StoresCard extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  void openPhone() async {
-    final Uri phoneUrl = Uri(scheme: 'tel', path: store.cleanPhone);
-
-    if (await canLaunchUrl(phoneUrl)) {
-      await launchUrl(phoneUrl);
-    } else {
-      print('Erro ao tentar abrir o telefone.');
-    }
   }
 }

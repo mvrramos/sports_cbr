@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sportscbr/common/price_card.dart';
-import 'package:sportscbr/models/cart_manager.dart';
+import 'package:sportscbr/models/cart/cart_manager.dart';
 import 'package:sportscbr/models/checkout_manager.dart';
+import 'package:sportscbr/models/payment/credit_card.dart';
+import 'package:sportscbr/screens/checkout/components/cpf_field.dart';
+import 'package:sportscbr/screens/checkout/components/credit_card_widget.dart';
 
 class CheckoutScreen extends StatelessWidget {
   CheckoutScreen({super.key});
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  final CreditCard creditCard = CreditCard();
 
   @override
   Widget build(BuildContext context) {
@@ -41,29 +47,40 @@ class CheckoutScreen extends StatelessWidget {
                 ),
               );
             }
-            return ListView(
-              children: [
-                PriceCard(
-                  "Finalizar pedido",
-                  onPressed: () {
-                    checkoutManager.checkout(onStockFail: (e) {
-                      ScaffoldMessenger.of(scaffoldKey.currentContext!).showSnackBar(
-                        SnackBar(
-                          content: Text(
-                            "$e",
-                          ),
-                          backgroundColor: Colors.red,
-                        ),
-                      );
-                      Navigator.of(context).popUntil((route) => route.settings.name == '/cart');
-                    }, onSuccess: (orders) {
-                      Navigator.of(context).popUntil((route) => route.settings.name == '/');
-                      Navigator.of(context).pushNamed('/confirmation', arguments: orders);
-                      // context.read<PageManager>().setPage(2);
-                    });
-                  },
-                ),
-              ],
+            return Form(
+              key: formKey,
+              child: ListView(
+                children: [
+                  CreditCardWidget(creditCard),
+                  CpfField(),
+                  PriceCard(
+                    "Finalizar pedido",
+                    onPressed: () {
+                      if (formKey.currentState!.validate()) {
+                        formKey.currentState!.save();
+
+                        print(creditCard);
+                        print('enviar');
+                        // checkoutManager.checkout(onStockFail: (e) {
+                        //   ScaffoldMessenger.of(scaffoldKey.currentContext!).showSnackBar(
+                        //     SnackBar(
+                        //       content: Text(
+                        //         "$e",
+                        //       ),
+                        //       backgroundColor: Colors.red,
+                        //     ),
+                        //   );
+                        //   Navigator.of(context).popUntil((route) => route.settings.name == '/cart');
+                        // }, onSuccess: (orders) {
+                        //   Navigator.of(context).popUntil((route) => route.settings.name == '/');
+                        //   Navigator.of(context).pushNamed('/confirmation', arguments: orders);
+                        //   // context.read<PageManager>().setPage(2);
+                        // });
+                      }
+                    },
+                  ),
+                ],
+              ),
             );
           },
         ),

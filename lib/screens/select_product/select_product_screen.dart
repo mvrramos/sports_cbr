@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sportscbr/models/product_manager.dart';
+import 'package:sportscbr/models/product/product_manager.dart';
 
 class SelectProductScreen extends StatelessWidget {
   const SelectProductScreen({super.key});

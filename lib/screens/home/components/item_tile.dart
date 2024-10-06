@@ -3,10 +3,10 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sportscbr/models/home_manager.dart';
-import 'package:sportscbr/models/product.dart';
-import 'package:sportscbr/models/product_manager.dart';
-import 'package:sportscbr/models/section.dart';
-import 'package:sportscbr/models/section_item.dart';
+import 'package:sportscbr/models/product/product.dart';
+import 'package:sportscbr/models/product/product_manager.dart';
+import 'package:sportscbr/models/section/section.dart';
+import 'package:sportscbr/models/section/section_item.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class ItemTile extends StatelessWidget {

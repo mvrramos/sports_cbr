@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sportscbr/common/custom_drawer/custom_drawer.dart';
 import 'package:sportscbr/models/admin_orders_manager.dart';
-import 'package:sportscbr/models/admin_users_manager.dart';
+import 'package:sportscbr/models/user/admin_users_manager.dart';
 import 'package:sportscbr/models/page_manager.dart';
 
 class AdminUsersScreen extends StatelessWidget {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:sportscbr/models/page_manager.dart';
-import 'package:sportscbr/models/user_manager.dart';
+import 'package:sportscbr/models/user/user_manager.dart';
 import 'package:sportscbr/orders/orders_screen.dart';
 import 'package:sportscbr/screens/admin_orders/admin_orders_screen.dart';
 import 'package:sportscbr/screens/admin_users/admin_users_screen.dart';

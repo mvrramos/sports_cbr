@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sportscbr/common/custom_drawer/custom_drawer.dart';
-import 'package:sportscbr/models/stores_manager.dart';
+import 'package:sportscbr/models/stores/stores_manager.dart';
 import 'package:sportscbr/screens/stores/components/stores_card.dart';
 
 class StoresScreen extends StatelessWidget {

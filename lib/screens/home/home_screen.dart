@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sportscbr/common/custom_drawer/custom_drawer.dart';
 import 'package:sportscbr/models/home_manager.dart';
-import 'package:sportscbr/models/user_manager.dart';
+import 'package:sportscbr/models/user/user_manager.dart';
 import 'package:sportscbr/screens/home/components/add_section_widget.dart';
 import 'package:sportscbr/screens/home/components/section_list.dart';
 import 'package:sportscbr/screens/home/components/section_staggared.dart';
