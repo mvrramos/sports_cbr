@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:sportscbr/models/cart/cart_manager.dart';
 import 'package:sportscbr/models/orders/orders.dart';
+import 'package:sportscbr/models/payment/credit_card.dart';
 import 'package:sportscbr/models/product/product.dart';
 
 class CheckoutManager extends ChangeNotifier {
@@ -20,7 +21,11 @@ class CheckoutManager extends ChangeNotifier {
     // print(cartManager.productsPrice);
   }
 
-  Future<void> checkout({Function? onStockFail, Function? onSuccess}) async {
+  Future<void> checkout({
+    CreditCard? creditCard,
+    Function? onStockFail,
+    Function? onSuccess,
+  }) async {
     loading = true;
 
     try {

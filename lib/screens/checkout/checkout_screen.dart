@@ -59,23 +59,23 @@ class CheckoutScreen extends StatelessWidget {
                       if (formKey.currentState!.validate()) {
                         formKey.currentState!.save();
 
-                        print(creditCard);
-                        print('enviar');
-                        // checkoutManager.checkout(onStockFail: (e) {
-                        //   ScaffoldMessenger.of(scaffoldKey.currentContext!).showSnackBar(
-                        //     SnackBar(
-                        //       content: Text(
-                        //         "$e",
-                        //       ),
-                        //       backgroundColor: Colors.red,
-                        //     ),
-                        //   );
-                        //   Navigator.of(context).popUntil((route) => route.settings.name == '/cart');
-                        // }, onSuccess: (orders) {
-                        //   Navigator.of(context).popUntil((route) => route.settings.name == '/');
-                        //   Navigator.of(context).pushNamed('/confirmation', arguments: orders);
-                        //   // context.read<PageManager>().setPage(2);
-                        // });
+                        checkoutManager.checkout(
+                          creditCard: creditCard,
+                          onStockFail: (e) {
+                          ScaffoldMessenger.of(scaffoldKey.currentContext!).showSnackBar(
+                            SnackBar(
+                              content: Text(
+                                "$e",
+                              ),
+                              backgroundColor: Colors.red,
+                            ),
+                          );
+                          Navigator.of(context).popUntil((route) => route.settings.name == '/cart');
+                        }, onSuccess: (orders) {
+                          Navigator.of(context).popUntil((route) => route.settings.name == '/');
+                          Navigator.of(context).pushNamed('/confirmation', arguments: orders);
+                          // context.read<PageManager>().setPage(2);
+                        });
                       }
                     },
                   ),

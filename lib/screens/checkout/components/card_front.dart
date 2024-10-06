@@ -50,10 +50,10 @@ class CardFront extends StatelessWidget {
                       FilteringTextInputFormatter.digitsOnly,
                       CartaoBancarioInputFormatter(),
                     ],
-                    validator: (number) {
-                      // List<CreditCardType> brands = detectCCType(number!);
+                    validator: (numberCard) {
+                      // List<CreditCardType> brands = detectCCType(numberCard!);
 
-                      if (number!.length != 19) {
+                      if (numberCard!.length != 19) {
                         return "Campo inválido";
                       }
 
@@ -63,7 +63,7 @@ class CardFront extends StatelessWidget {
                       dateFocus.requestFocus();
                     },
                     focusNode: numberFocus,
-                    onSaved: (number) => creditCard.setNumber(number!),
+                    onSaved: (numberCard) => creditCard.setNumber(numberCard!),
                   ),
                   CardTextField(
                     title: "Validade",
