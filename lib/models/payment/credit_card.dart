@@ -1,5 +1,4 @@
 import 'package:credit_card_type_detector/credit_card_type_detector.dart';
-import 'package:credit_card_type_detector/models.dart';
 
 class CreditCard {
   String? number;
@@ -16,40 +15,27 @@ class CreditCard {
 
   void setNumber(String number) {
     this.number = number;
-
-    String cleanNumber = number.replaceAll(' ', '');
-    final detectedTypes = detectCCType(cleanNumber);
+    var detectedTypes = detectCCType(number.replaceAll(' ', ''));
 
     if (detectedTypes.isNotEmpty) {
-      brand = getBrandName(detectedTypes as CreditCardType);
+      brand = detectedTypes.first.type;
     } else {
-      brand = 'Unknown';
+      brand = "Unknown";
     }
   }
 
-  String getBrandName(CreditCardType type) {
-    switch (type) {
-      case CreditCardType.visa:
-        return 'Visa';
-      case CreditCardType.mastercard:
-        return 'Mastercard';
-      case CreditCardType.americanExpress:
-        return 'American Express';
-      case CreditCardType.discover:
-        return 'Discover';
-      case CreditCardType.jcb:
-        return 'JCB';
-      case CreditCardType.dinersClub:
-        return 'Diners Club';
-      case CreditCardType.unionPay:
-        return 'UnionPay';
-      default:
-        return 'Unknown';
-    }
+  Map<String, dynamic> toMap() {
+    return {
+      'cardNumber': number!.replaceAll(' ', ''),
+      'holder': holder,
+      'expirationDate': expirationDate,
+      'securityCode': securityCode,
+      'brand': brand,
+    };
   }
 
   @override
   String toString() {
-    return 'CreditCard{number: $number, holder: $holder, expirationDate: $expirationDate, securityCode: $securityCode, brand: $brand}';
+    return 'CreditCard(number: $number, holder: $holder, expirationDate: $expirationDate, securityCode: $securityCode, brand: $brand)';
   }
 }

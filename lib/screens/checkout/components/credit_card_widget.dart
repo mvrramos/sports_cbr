@@ -6,6 +6,7 @@ import 'package:sportscbr/screens/checkout/components/card_front.dart';
 
 class CreditCardWidget extends StatefulWidget {
   CreditCardWidget(this.creditCard, {super.key});
+
   final CreditCard creditCard;
 
   @override
@@ -51,7 +52,7 @@ class _CreditCardWidgetState extends State<CreditCardWidget> {
             onPressed: () {
               cardKey.currentState!.toggleCard();
             },
-            child: Text(
+            child: const Text(
               "Virar cartão",
               style: TextStyle(color: Colors.white, fontSize: 16),
             ),

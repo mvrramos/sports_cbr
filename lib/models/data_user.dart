@@ -10,7 +10,9 @@ class DataUser {
     id = document.id;
     name = document['name'];
     email = document['email'];
-    cpf = document['cpf'];
+    if (data.containsKey('cpf')) {
+      cpf = document['cpf'];
+    }
     if (data.containsKey('address')) {
       address = Address.fromMap(document['address'] as Map<String, dynamic>);
     }

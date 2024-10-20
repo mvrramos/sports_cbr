@@ -1,71 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MercadoPago Bricks Payment</title>
-  <script src="https://sdk.mercadopago.com/js/v2"></script>
-  <style>
-    .bricks-container {
-      max-width: 600px;
-      margin: 50px auto;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado Pago Payment</title>
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
 </head>
 <body>
-  <div class="bricks-container">
-    <form id="payment-form">
-      <div id="cardPaymentBrick_container"></div>
-      <button type="submit" id="submit-button">Pagar</button>
+    <h1>Checkout Mercado Pago</h1>
+    <form id="form-checkout">
+        <input type="text" id="cardNumber" placeholder="Número do Cartão">
+        <input type="text" id="expirationDate" placeholder="MM/AA">
+        <input type="text" id="securityCode" placeholder="Código de Segurança">
+        <input type="text" id="cardholderName" placeholder="Nome no Cartão">
+        <input type="text" id="cardholderEmail" placeholder="Email">
+        <button type="submit" id="submit-button">Pagar</button>
     </form>
-  </div>
 
-  <script>
-    const mp = new MercadoPago('SUA_PUBLIC_KEY', {
-      locale: 'pt-BR'
-    });
+    <script>
+        const mp = new MercadoPago('TEST-0d039360-dee6-45ea-bd08-b3dd9dc53e5c'); 
 
-    const bricksBuilder = mp.bricks();
-
-    const renderCardPaymentBrick = async (bricksBuilder) => {
-      const settings = {
-        initialization: {
-          amount: 100.0, // O valor da transação
-        },
-        callbacks: {
-          onSubmit: (cardFormData) => {
-            // Callback chamado ao enviar o formulário
-            return new Promise((resolve, reject) => {
-              fetch('/process_payment', {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json'
+        const cardForm = mp.cardForm({
+            amount: "100.00", // Valor da compra
+            autoMount: true,
+            form: {
+                id: "form-checkout",
+                cardholderName: {
+                    id: "cardholderName",
+                    placeholder: "Titular do cartão"
                 },
-                body: JSON.stringify(cardFormData)
-              })
-              .then(response => response.json())
-              .then(result => {
-                // Lida com a resposta do pagamento
-                if (result.status === 'approved') {
-                  alert('Pagamento aprovado!');
-                } else {
-                  alert('Erro no pagamento: ' + result.message);
+                cardholderEmail: {
+                    id: "cardholderEmail",
+                    placeholder: "E-mail"
+                },
+                cardNumber: {
+                    id: "cardNumber",
+                    placeholder: "Número do cartão"
+                },
+                expirationDate: {
+                    id: "expirationDate",
+                    placeholder: "MM/AA"
+                },
+                securityCode: {
+                    id: "securityCode",
+                    placeholder: "Código de segurança"
+                },
+            },
+            callbacks: {
+                onFormMounted: error => {
+                    if (error) return console.warn("Erro ao montar formulário: ", error);
+                    console.log("Formulário montado com sucesso");
+                },
+                onSubmit: event => {
+                    event.preventDefault();
+                    const cardData = cardForm.getCardFormData();
+                    console.log(cardData); 
+                },
+                onFetching: resource => {
+                    console.log("Processando pagamento...");
                 }
-                resolve();
-              })
-              .catch(error => {
-                console.error('Error:', error);
-                reject(error);
-              });
-            });
-          },
-        },
-      };
-
-      await bricksBuilder.create('cardPayment', 'cardPaymentBrick_container', settings);
-    };
-
-    renderCardPaymentBrick(bricksBuilder);
-  </script>
+            }
+        });
+    </script>
 </body>
 </html>

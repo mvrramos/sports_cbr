@@ -21,9 +21,8 @@ class CepAbertoService {
       final CepAbertoAddress address = CepAbertoAddress.fromMap(response.data!);
 
       return address;
-    } on DioException {
-      return Future.error("Erro ao buscar CEP");
+    } on DioError catch (e) {
+      return Future.error("Erro ao buscar CEP: $e");
     }
   }
 }
-  
