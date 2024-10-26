@@ -14,7 +14,7 @@ import 'package:sportscbr/models/user/user_manager.dart';
 import 'package:sportscbr/screens/address/address_screen.dart';
 import 'package:sportscbr/screens/base/base_screen.dart';
 import 'package:sportscbr/screens/cart/cart_screen.dart';
-import 'package:sportscbr/screens/checkout/checkout_screen.dart';
+// import 'package:sportscbr/screens/checkout/checkout_screen.dart';
 import 'package:sportscbr/screens/confirmation/confirmation_screen.dart';
 import 'package:sportscbr/screens/edit_product/edit_product_screen.dart';
 import 'package:sportscbr/screens/home/home_screen.dart';
@@ -27,9 +27,6 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(const MyApp());
-
-  // final response = await FirebaseFunctions.instance.httpsCallable("getUserData").call();
-  // print(response.data);
 }
 
 class MyApp extends StatelessWidget {
@@ -101,7 +98,7 @@ class MyApp extends StatelessWidget {
               return MaterialPageRoute(builder: (_) => const AddressScreen());
 
             case '/checkout':
-              return MaterialPageRoute(builder: (_) => CheckoutScreen());
+            // return MaterialPageRoute(builder: (_) => CheckoutScreen());
 
             case '/confirmation':
               return MaterialPageRoute(builder: (_) => ConfirmationScreen(settings.arguments as Orders));
