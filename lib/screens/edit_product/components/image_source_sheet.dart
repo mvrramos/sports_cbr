@@ -37,7 +37,7 @@ class ImageSourceSheet extends StatelessWidget {
                 final XFile? file = await picker.pickImage(source: ImageSource.camera);
                 if (file != null) {
                   await editImage(file.path, context);
-                  Navigator.of(context).pop(); // Fechar o BottomSheet
+                  // Navigator.of(context).pop();
                 }
               },
               child: const Text("Câmera"),
@@ -47,7 +47,7 @@ class ImageSourceSheet extends StatelessWidget {
                 final XFile? file = await picker.pickImage(source: ImageSource.gallery);
                 if (file != null) {
                   await editImage(file.path, context);
-                  Navigator.of(context).pop(); // Fechar o BottomSheet
+                  // Navigator.of(context).pop();
                 }
               },
               child: const Text("Galeria"),

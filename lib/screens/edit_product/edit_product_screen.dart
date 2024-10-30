@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import '../../models/product/product.dart';
 import '../../models/product/product_manager.dart';
 import 'components/images_form.dart';
@@ -65,7 +66,6 @@ class EditProductScreen extends StatelessWidget {
                       ),
                     ),
                     const Text(
-                      //TODO Alterar valor aqui
                       "R\$...",
                       style: TextStyle(
                         fontSize: 22,

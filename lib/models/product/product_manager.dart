@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+
 import 'product.dart';
 
 class ProductManager extends ChangeNotifier {
@@ -10,7 +11,7 @@ class ProductManager extends ChangeNotifier {
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
   List<Product> allProducts = [];
 
-  late String _search = '';
+  String _search = '';
   String get search => _search;
 
   set search(String value) {
@@ -32,7 +33,7 @@ class ProductManager extends ChangeNotifier {
     if (search.isEmpty) {
       filteredProducts.addAll(allProducts);
     } else {
-      filteredProducts.addAll(allProducts.where((p) => p.name!.toLowerCase().contains(search)));
+      filteredProducts.addAll(allProducts.where((p) => p.name!.toLowerCase().contains(search.toLowerCase())));
     }
 
     return filteredProducts;

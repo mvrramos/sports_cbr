@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+
+import '../../../models/orders/orders.dart';
 import 'cancel_orders_dialog.dart';
 import 'export_address_dialog.dart';
 import 'orders_product_tile.dart';
-import '../../../models/orders/orders.dart';
 
 class OrdersTile extends StatelessWidget {
   const OrdersTile(this.orders, {this.showControls = false, super.key});
@@ -36,7 +37,6 @@ class OrdersTile extends StatelessWidget {
                   "R\$ ${orders.price!.toStringAsFixed(2)}",
                   style: const TextStyle(fontWeight: FontWeight.w600, color: Colors.black),
                 ),
-                // TODO Implementar status
               ],
             ),
             Text(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import '../../common/custom_drawer/custom_drawer.dart';
 import '../../models/product/product.dart';
 import '../../models/product/product_manager.dart';
@@ -32,7 +33,7 @@ class ProductsScreen extends StatelessWidget {
                         builder: (_) => SearchDialog(productManager.search),
                       );
                       if (search != null) {
-                        productManager.search = search;
+                        context.read<ProductManager>().search = search;
                       }
                     },
                     child: SizedBox(
