@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:sportscbr/helpers/firebase_errors.dart';
-import 'package:sportscbr/models/data_user.dart';
+import '../../helpers/firebase_errors.dart';
+import '../data_user.dart';
 
 class UserManager extends ChangeNotifier {
   final FirebaseAuth auth = FirebaseAuth.instance;

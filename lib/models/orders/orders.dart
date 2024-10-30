@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:sportscbr/models/address.dart';
-import 'package:sportscbr/models/cart/cart_manager.dart';
-import 'package:sportscbr/models/cart/cart_product.dart';
+import '../address.dart';
+import '../cart/cart_manager.dart';
+import '../cart/cart_product.dart';
 
 enum Status {
   canceled,

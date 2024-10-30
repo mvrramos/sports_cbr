@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
-import 'package:sportscbr/common/custom_drawer/custom_drawer.dart';
-import 'package:sportscbr/common/custom_drawer/order/orders_tile.dart';
-import 'package:sportscbr/common/custom_icon_button.dart';
-import 'package:sportscbr/models/admin_orders_manager.dart';
-import 'package:sportscbr/models/orders/orders.dart';
-import 'package:sportscbr/screens/cart/components/empty_card.dart';
+import '../../common/custom_drawer/custom_drawer.dart';
+import '../../common/custom_drawer/order/orders_tile.dart';
+import '../../common/custom_icon_button.dart';
+import '../../models/admin_orders_manager.dart';
+import '../../models/orders/orders.dart';
+import '../cart/components/empty_card.dart';
 
 class AdminOrdersScreen extends StatefulWidget {
   const AdminOrdersScreen({super.key});

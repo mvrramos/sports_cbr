@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sportscbr/common/login_card.dart';
-import 'package:sportscbr/common/price_card.dart';
-import 'package:sportscbr/models/cart/cart_manager.dart';
-import 'package:sportscbr/screens/cart/components/cart_tile.dart';
-import 'package:sportscbr/screens/cart/components/empty_card.dart';
+import '../../common/login_card.dart';
+import '../../common/price_card.dart';
+import '../../models/cart/cart_manager.dart';
+import 'components/cart_tile.dart';
+import 'components/empty_card.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});

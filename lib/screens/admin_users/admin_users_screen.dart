@@ -1,10 +1,10 @@
 import 'package:alphabet_list_scroll_view/alphabet_list_scroll_view.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sportscbr/common/custom_drawer/custom_drawer.dart';
-import 'package:sportscbr/models/admin_orders_manager.dart';
-import 'package:sportscbr/models/user/admin_users_manager.dart';
-import 'package:sportscbr/models/page_manager.dart';
+import '../../common/custom_drawer/custom_drawer.dart';
+import '../../models/admin_orders_manager.dart';
+import '../../models/user/admin_users_manager.dart';
+import '../../models/page_manager.dart';
 
 class AdminUsersScreen extends StatelessWidget {
   const AdminUsersScreen({super.key});

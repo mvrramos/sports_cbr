@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sportscbr/models/page_manager.dart';
+import '../../models/page_manager.dart';
 
 class DrawerTile extends StatelessWidget {
   const DrawerTile(this.iconData, this.title, this.page, {super.key});

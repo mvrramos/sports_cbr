@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:map_launcher/map_launcher.dart';
-import 'package:sportscbr/common/custom_icon_button.dart';
-import 'package:sportscbr/models/stores/stores.dart';
+import '../../../common/custom_icon_button.dart';
+import '../../../models/stores/stores.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class StoresCard extends StatelessWidget {

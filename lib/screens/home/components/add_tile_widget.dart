@@ -1,9 +1,9 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:sportscbr/models/section/section.dart';
-import 'package:sportscbr/models/section/section_item.dart';
-import 'package:sportscbr/screens/edit_product/components/image_source_sheet.dart';
+import '../../../models/section/section.dart';
+import '../../../models/section/section_item.dart';
+import '../../edit_product/components/image_source_sheet.dart';
 
 class AddTileWidget extends StatelessWidget {
   const AddTileWidget(this.section, {super.key});

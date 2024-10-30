@@ -1,12 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:sportscbr/models/address.dart';
-import 'package:sportscbr/models/cart/cart_product.dart';
-import 'package:sportscbr/models/data_user.dart';
-import 'package:sportscbr/models/product/product.dart';
-import 'package:sportscbr/models/user/user_manager.dart';
-import 'package:sportscbr/services/cep/cep_aberto_service.dart';
+import '../address.dart';
+import 'cart_product.dart';
+import '../data_user.dart';
+import '../product/product.dart';
+import '../user/user_manager.dart';
+import '../../services/cep/cep_aberto_service.dart';
 
 class CartManager extends ChangeNotifier {
   List<CartProduct> items = [];

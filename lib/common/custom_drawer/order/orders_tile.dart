@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sportscbr/common/custom_drawer/order/cancel_orders_dialog.dart';
-import 'package:sportscbr/common/custom_drawer/order/export_address_dialog.dart';
-import 'package:sportscbr/common/custom_drawer/order/orders_product_tile.dart';
-import 'package:sportscbr/models/orders/orders.dart';
+import 'cancel_orders_dialog.dart';
+import 'export_address_dialog.dart';
+import 'orders_product_tile.dart';
+import '../../../models/orders/orders.dart';
 
 class OrdersTile extends StatelessWidget {
   const OrdersTile(this.orders, {this.showControls = false, super.key});

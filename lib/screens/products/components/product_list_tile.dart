@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sportscbr/models/product/product.dart';
+import '../../../models/product/product.dart';
 
 class ProductListTile extends StatelessWidget {
   const ProductListTile(this.product, {super.key});

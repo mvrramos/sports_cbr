@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:sportscbr/models/stores/stores.dart';
+import 'stores.dart';
 
 class StoresManager extends ChangeNotifier {
   final FirebaseFirestore firestore = FirebaseFirestore.instance;

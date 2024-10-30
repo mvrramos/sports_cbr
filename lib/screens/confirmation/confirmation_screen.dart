@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sportscbr/common/custom_drawer/order/orders_product_tile.dart';
-import 'package:sportscbr/models/orders/orders.dart';
+import '../../common/custom_drawer/order/orders_product_tile.dart';
+import '../../models/orders/orders.dart';
 
 class ConfirmationScreen extends StatelessWidget {
   const ConfirmationScreen(this.orders, {super.key});

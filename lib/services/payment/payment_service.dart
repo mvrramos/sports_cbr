@@ -1,5 +1,5 @@
-import 'package:sportscbr/models/data_user.dart';
-import 'package:sportscbr/models/payment/credit_card.dart';
+import '../../models/data_user.dart';
+import '../../models/payment/credit_card.dart';
 
 class PaymentService {
   void authorize({CreditCard? creditCard, num? price, String? orderId, DataUser? dataUser}) {

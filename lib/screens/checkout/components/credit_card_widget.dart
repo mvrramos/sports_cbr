@@ -1,8 +1,8 @@
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
-import 'package:sportscbr/models/payment/credit_card.dart';
-import 'package:sportscbr/screens/checkout/components/card_back.dart';
-import 'package:sportscbr/screens/checkout/components/card_front.dart';
+import '../../../models/payment/credit_card.dart';
+import 'card_back.dart';
+import 'card_front.dart';
 
 class CreditCardWidget extends StatefulWidget {
   CreditCardWidget(this.creditCard, {super.key});

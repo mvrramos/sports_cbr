@@ -1,10 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sportscbr/helpers/validators.dart';
-import 'package:sportscbr/models/data_user.dart';
-import 'package:sportscbr/models/user/user_manager.dart';
-import 'package:sportscbr/screens/login/common/reset_password_dialog.dart';
+import '../../helpers/validators.dart';
+import '../../models/data_user.dart';
+import '../../models/user/user_manager.dart';
+import 'common/reset_password_dialog.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});

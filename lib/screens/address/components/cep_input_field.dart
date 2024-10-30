@@ -2,9 +2,9 @@ import 'package:brasil_fields/brasil_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:sportscbr/common/custom_icon_button.dart';
-import 'package:sportscbr/models/address.dart';
-import 'package:sportscbr/models/cart/cart_manager.dart';
+import '../../../common/custom_icon_button.dart';
+import '../../../models/address.dart';
+import '../../../models/cart/cart_manager.dart';
 
 class CepInputField extends StatefulWidget {
   const CepInputField(this.address, {super.key});

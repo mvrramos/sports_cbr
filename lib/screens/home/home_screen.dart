@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sportscbr/common/custom_drawer/custom_drawer.dart';
-import 'package:sportscbr/models/home_manager.dart';
-import 'package:sportscbr/models/user/user_manager.dart';
-import 'package:sportscbr/screens/home/components/add_section_widget.dart';
-import 'package:sportscbr/screens/home/components/section_list.dart';
-import 'package:sportscbr/screens/home/components/section_staggared.dart';
+import '../../common/custom_drawer/custom_drawer.dart';
+import '../../models/home_manager.dart';
+import '../../models/user/user_manager.dart';
+import 'components/add_section_widget.dart';
+import 'components/section_list.dart';
+import 'components/section_staggared.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

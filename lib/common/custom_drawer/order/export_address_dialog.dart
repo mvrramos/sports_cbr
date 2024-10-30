@@ -3,7 +3,7 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:screenshot/screenshot.dart';
-import 'package:sportscbr/models/address.dart';
+import '../../../models/address.dart';
 
 class ExportAddressDialog extends StatelessWidget {
   ExportAddressDialog(this.address, {super.key});

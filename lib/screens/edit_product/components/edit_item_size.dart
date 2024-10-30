@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sportscbr/common/custom_icon_button.dart';
-import 'package:sportscbr/models/item_size.dart';
+import '../../../common/custom_icon_button.dart';
+import '../../../models/item_size.dart';
 
 class EditItemSize extends StatelessWidget {
   const EditItemSize(Key key, this.size, {required this.onRemove, required this.onMoveUp, required this.onMoveDown}) : super(key: key);

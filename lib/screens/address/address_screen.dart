@@ -2,10 +2,10 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_tabs/flutter_custom_tabs.dart' as custom_tabs;
 import 'package:provider/provider.dart';
-import 'package:sportscbr/common/price_card.dart';
-import 'package:sportscbr/models/cart/cart_manager.dart';
-import 'package:sportscbr/screens/address/components/address_card.dart';
-import 'package:sportscbr/screens/checkout/components/cpf_field.dart';
+import '../../common/price_card.dart';
+import '../../models/cart/cart_manager.dart';
+import 'components/address_card.dart';
+import '../checkout/components/cpf_field.dart';
 import 'package:url_launcher/url_launcher.dart' as url_launcher;
 
 class AddressScreen extends StatelessWidget {

@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:sportscbr/models/address.dart';
+import 'address.dart';
 
 class DataUser {
   DataUser({this.name, this.email, this.password, this.confirmPassword, this.id, this.cpf});

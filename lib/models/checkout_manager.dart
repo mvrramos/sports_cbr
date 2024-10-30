@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:sportscbr/models/cart/cart_manager.dart';
-import 'package:sportscbr/models/orders/orders.dart';
-import 'package:sportscbr/models/payment/credit_card.dart';
-import 'package:sportscbr/models/product/product.dart';
+import 'cart/cart_manager.dart';
+import 'orders/orders.dart';
+import 'payment/credit_card.dart';
+import 'product/product.dart';
 
 class CheckoutManager extends ChangeNotifier {
   CartManager cartManager = CartManager();

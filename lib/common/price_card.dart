@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sportscbr/models/cart/cart_manager.dart';
+import '../models/cart/cart_manager.dart';
 
 class PriceCard extends StatelessWidget {
   const PriceCard(this.buttonText, {required this.onPressed, super.key});

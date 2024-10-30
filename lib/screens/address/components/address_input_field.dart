@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:sportscbr/models/address.dart';
-import 'package:sportscbr/models/cart/cart_manager.dart';
+import '../../../models/address.dart';
+import '../../../models/cart/cart_manager.dart';
 
 class AddressInputField extends StatelessWidget {
   const AddressInputField(this.address, {super.key});

@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sportscbr/models/page_manager.dart';
-import 'package:sportscbr/models/user/user_manager.dart';
+import '../../models/page_manager.dart';
+import '../../models/user/user_manager.dart';
 
 class CustomDrawerHeader extends StatelessWidget {
   const CustomDrawerHeader({super.key});

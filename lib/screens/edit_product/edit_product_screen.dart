@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sportscbr/models/product/product.dart';
-import 'package:sportscbr/models/product/product_manager.dart';
-import 'package:sportscbr/screens/edit_product/components/images_form.dart';
-import 'package:sportscbr/screens/edit_product/components/sizes_form.dart';
+import '../../models/product/product.dart';
+import '../../models/product/product_manager.dart';
+import 'components/images_form.dart';
+import 'components/sizes_form.dart';
 
 class EditProductScreen extends StatelessWidget {
   EditProductScreen(Product? p, {super.key})

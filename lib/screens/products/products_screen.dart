@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sportscbr/common/custom_drawer/custom_drawer.dart';
-import 'package:sportscbr/models/product/product.dart';
-import 'package:sportscbr/models/product/product_manager.dart';
-import 'package:sportscbr/models/user/user_manager.dart';
-import 'package:sportscbr/screens/products/components/product_list_tile.dart';
-import 'package:sportscbr/screens/products/components/search_dialog.dart';
+import '../../common/custom_drawer/custom_drawer.dart';
+import '../../models/product/product.dart';
+import '../../models/product/product_manager.dart';
+import '../../models/user/user_manager.dart';
+import 'components/product_list_tile.dart';
+import 'components/search_dialog.dart';
 
 class ProductsScreen extends StatelessWidget {
   const ProductsScreen({super.key});

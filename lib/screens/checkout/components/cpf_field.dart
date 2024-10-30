@@ -2,7 +2,7 @@ import 'package:brasil_fields/brasil_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:sportscbr/models/user/user_manager.dart';
+import '../../../models/user/user_manager.dart';
 
 class CpfField extends StatelessWidget {
   const CpfField({super.key});

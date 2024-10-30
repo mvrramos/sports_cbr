@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:sportscbr/models/cep/cep_aberto_address.dart';
+import '../../models/cep/cep_aberto_address.dart';
 
 const token = "1d8011cca1633ee86c366e82f3c913e9";
 

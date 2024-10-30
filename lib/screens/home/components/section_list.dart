@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sportscbr/models/home_manager.dart';
-import 'package:sportscbr/models/section/section.dart';
-import 'package:sportscbr/screens/home/components/add_tile_widget.dart';
-import 'package:sportscbr/screens/home/components/item_tile.dart';
-import 'package:sportscbr/screens/home/components/section_header.dart';
+import '../../../models/home_manager.dart';
+import '../../../models/section/section.dart';
+import 'add_tile_widget.dart';
+import 'item_tile.dart';
+import 'section_header.dart';
 
 class SectionList extends StatelessWidget {
   const SectionList(this.section, {super.key});

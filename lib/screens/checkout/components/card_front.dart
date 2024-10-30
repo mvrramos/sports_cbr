@@ -2,8 +2,8 @@ import 'package:brasil_fields/brasil_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
-import 'package:sportscbr/models/payment/credit_card.dart';
-import 'package:sportscbr/screens/checkout/components/card_text_field.dart';
+import '../../../models/payment/credit_card.dart';
+import 'card_text_field.dart';
 
 class CardFront extends StatelessWidget {
   CardFront(this.numberFocus, this.dateFocus, this.nameFocus, this.finished, this.creditCard, {super.key});

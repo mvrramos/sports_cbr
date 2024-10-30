@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:sportscbr/models/section/section.dart';
+import 'section/section.dart';
 
 class HomeManager extends ChangeNotifier {
   final List<Section> _sections = [];

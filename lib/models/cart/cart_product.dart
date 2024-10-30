@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:sportscbr/models/item_size.dart';
-import 'package:sportscbr/models/product/product.dart';
+import '../item_size.dart';
+import '../product/product.dart';
 
 class CartProduct extends ChangeNotifier {
   Product? _product;

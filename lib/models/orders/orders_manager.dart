@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:sportscbr/models/data_user.dart';
-import 'package:sportscbr/models/orders/orders.dart';
+import '../data_user.dart';
+import 'orders.dart';
 
 class OrdersManager extends ChangeNotifier {
   DataUser? dataUser;
