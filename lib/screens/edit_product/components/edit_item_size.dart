@@ -41,7 +41,6 @@ class EditItemSize extends StatelessWidget {
             keyboardType: TextInputType.number,
             style: const TextStyle(fontSize: 18, color: Colors.white),
             validator: (stock) {
-              // Pega o texto e transforma em int, se retornar null (erro)
               if (int.tryParse(stock!) == null) {
                 return "Inválido";
               }

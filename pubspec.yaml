@@ -59,7 +59,7 @@ dependencies:
   flutter_signin_button: ^2.0.0
   url_launcher: ^6.3.1
   map_launcher: ^3.5.0
-  flutter_svg: ^2.0.10
+  flutter_svg: ^2.0.11
   flip_card: ^0.7.0
   mask_text_input_formatter: ^2.9.0
   cloud_functions: ^5.1.3

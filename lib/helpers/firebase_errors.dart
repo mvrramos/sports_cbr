@@ -7,7 +7,7 @@ String getErrorString(String code) {
     case 'email-already-in-use':
       return 'E-mail já está sendo utilizado em outra conta.';
     case 'invalid-credential':
-      return 'Credencial inválida.';
+      return 'Credencial ou email inválido.';
     case 'wrong-password':
       return 'Sua senha está incorreta.';
     case 'user-not-found':
