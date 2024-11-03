@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+
 import '../../models/page_manager.dart';
 import '../../models/user/user_manager.dart';
 import '../../orders/orders_screen.dart';
@@ -46,7 +47,7 @@ class _BaseScreenState extends State<BaseScreen> {
               if (userManager.adminEnabled) ...[
                 const AdminUsersScreen(),
                 const AdminOrdersScreen()
-              ]
+              ],
             ],
           );
         },

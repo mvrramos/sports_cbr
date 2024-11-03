@@ -1,5 +1,7 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import '../../../common/custom_icon_button.dart';
 import '../../../models/cart/cart_product.dart';
 
@@ -23,7 +25,11 @@ class CartTile extends StatelessWidget {
                 SizedBox(
                   height: 100,
                   width: 100,
-                  child: Image.network(cartProduct.product?.images?.first ?? ''),
+                  child: Image(
+                    image: CachedNetworkImageProvider(
+                      cartProduct.product?.images?.first ?? '',
+                    ),
+                  ),
                 ),
                 Expanded(
                   child: Padding(

@@ -24,7 +24,7 @@ class AdminUsersScreen extends StatelessWidget {
         builder: (_, adminUsersManager, __) {
           return AlphabetListScrollView(
             strList: adminUsersManager.names,
-            indexedHeight: (index) => 80.0, 
+            indexedHeight: (index) => 80.0,
             normalTextStyle: const TextStyle(fontSize: 20, color: Colors.white),
             highlightTextStyle: const TextStyle(fontSize: 20, color: Colors.green),
             showPreview: true,

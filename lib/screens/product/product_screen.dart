@@ -1,6 +1,8 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import '../../models/cart/cart_manager.dart';
 import '../../models/product/product.dart';
 import '../../models/user/user_manager.dart';
@@ -32,7 +34,7 @@ class ProductScreen extends StatelessWidget {
                     icon: const Icon(Icons.edit),
                   );
                 }
-                return Container(); // Fallback vazio
+                return Container();
               },
             ),
           ],
@@ -43,8 +45,8 @@ class ProductScreen extends StatelessWidget {
               aspectRatio: 1,
               child: CarouselSlider(
                 items: product.images!.map((url) {
-                  return Image.network(
-                    url,
+                  return Image(
+                    image: CachedNetworkImageProvider(url),
                     fit: BoxFit.cover,
                   );
                 }).toList(),

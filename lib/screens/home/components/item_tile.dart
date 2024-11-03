@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:transparent_image/transparent_image.dart';
@@ -39,7 +40,13 @@ class ItemTile extends StatelessWidget {
                     content: product != null
                         ? ListTile(
                             contentPadding: EdgeInsets.zero,
-                            leading: Image.network(product.images!.first),
+                            leading: Image(
+                              image: CachedNetworkImageProvider(
+                                product.images!.first,
+                                maxHeight: 120,
+                                maxWidth: 160,
+                              ),
+                            ),
                             title: Text(product.name!, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600)),
                             subtitle: Text("R\$ ${product.basePrice}", style: const TextStyle(fontSize: 18)),
                           )

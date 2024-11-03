@@ -1,8 +1,18 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+// import 'package:sportscbr/screens/checkout/checkout_screen.dart';
+import 'package:sportscbr/screens/confirmation/confirmation_screen.dart';
+import 'package:sportscbr/screens/edit_product/edit_product_screen.dart';
+import 'package:sportscbr/screens/home/home_screen.dart';
+import 'package:sportscbr/screens/login/login_screen.dart';
+import 'package:sportscbr/screens/product/product_screen.dart';
+import 'package:sportscbr/screens/select_product/select_product_screen.dart';
+import 'package:sportscbr/screens/signup/signup_screen.dart';
+
 import 'models/admin_orders_manager.dart';
 import 'models/cart/cart_manager.dart';
+import 'models/data_user.dart';
 import 'models/home_manager.dart';
 import 'models/orders/orders.dart';
 import 'models/orders/orders_manager.dart';
@@ -14,14 +24,6 @@ import 'models/user/user_manager.dart';
 import 'screens/address/address_screen.dart';
 import 'screens/base/base_screen.dart';
 import 'screens/cart/cart_screen.dart';
-// import 'package:sportscbr/screens/checkout/checkout_screen.dart';
-import 'package:sportscbr/screens/confirmation/confirmation_screen.dart';
-import 'package:sportscbr/screens/edit_product/edit_product_screen.dart';
-import 'package:sportscbr/screens/home/home_screen.dart';
-import 'package:sportscbr/screens/login/login_screen.dart';
-import 'package:sportscbr/screens/product/product_screen.dart';
-import 'package:sportscbr/screens/select_product/select_product_screen.dart';
-import 'package:sportscbr/screens/signup/signup_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -60,6 +62,7 @@ class MyApp extends StatelessWidget {
           lazy: false,
           update: (_, userManager, adminOrdersManager) => adminOrdersManager!..updateAdmin(userManager.adminEnabled),
         ),
+        Provider<DataUser>(create: (_) => DataUser()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../../models/user/user_manager.dart';
 import 'custom_drawer_header.dart';
 import 'drawer_tile.dart';
-import '../../models/user/user_manager.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
@@ -31,7 +32,8 @@ class CustomDrawer extends StatelessWidget {
                 return Container();
               }
             },
-          )
+          ),
+          // DrawerTile(Icons.person, "Perfil", 6),
         ],
       ),
     );

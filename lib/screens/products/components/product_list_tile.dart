@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+
 import '../../../models/product/product.dart';
 
 class ProductListTile extends StatelessWidget {
@@ -24,7 +26,23 @@ class ProductListTile extends StatelessWidget {
             children: [
               AspectRatio(
                 aspectRatio: 1,
-                child: Image.network(product.images!.first),
+                child: Image(
+                  image: CachedNetworkImageProvider(
+                    product.images!.first,
+                    maxHeight: 120,
+                    maxWidth: 160,
+                  ),
+                  loadingBuilder: (context, child, progress) {
+                    if (progress == null) {
+                      return child;
+                    }
+                    return Center(
+                      child: CircularProgressIndicator(
+                        color: Color.fromARGB(100, 73, 5, 182),
+                      ),
+                    );
+                  },
+                ),
               ),
               const SizedBox(width: 16),
               Expanded(

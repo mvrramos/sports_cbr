@@ -1,12 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
+
+import '../../services/cep/cep_aberto_service.dart';
 import '../address.dart';
-import 'cart_product.dart';
 import '../data_user.dart';
 import '../product/product.dart';
 import '../user/user_manager.dart';
-import '../../services/cep/cep_aberto_service.dart';
+import 'cart_product.dart';
 
 class CartManager extends ChangeNotifier {
   List<CartProduct> items = [];
@@ -63,11 +64,15 @@ class CartManager extends ChangeNotifier {
     try {
       final e = items.firstWhere((p) => p.stackable(product));
       e.increment();
+      _onItemUpdated();
     } catch (e) {
       final cartProduct = CartProduct.fromProduct(product);
       cartProduct.addListener(_onItemUpdated);
       items.add(cartProduct);
-      dataUser!.cartReference.add(cartProduct.toCartItemMap()).then((doc) => cartProduct.id = doc.id);
+      dataUser!.cartReference.add(cartProduct.toCartItemMap()).then((doc) {
+        cartProduct.id = doc.id;
+        _onItemUpdated();
+      });
       notifyListeners();
     }
   }
@@ -80,7 +85,7 @@ class CartManager extends ChangeNotifier {
   }
 
   void _onItemUpdated() {
-    productsPrice = 0.0;
+    productsPrice = 0;
 
     for (int i = 0; i < items.length; i++) {
       final cartProduct = items[i];
@@ -92,7 +97,6 @@ class CartManager extends ChangeNotifier {
       }
 
       productsPrice += cartProduct.totalPrice;
-
       _updateCartProduct(cartProduct);
     }
 
@@ -101,6 +105,7 @@ class CartManager extends ChangeNotifier {
 
   void _updateCartProduct(CartProduct cartProduct) {
     dataUser!.cartReference.doc(cartProduct.id).update(cartProduct.toCartItemMap());
+    notifyListeners();
   }
 
   bool get isCartValid {
