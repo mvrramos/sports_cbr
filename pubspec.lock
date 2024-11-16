@@ -864,6 +864,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.0"
+  mp_integration:
+    dependency: "direct main"
+    description:
+      name: mp_integration
+      sha256: d29a83251ae4d802aea57e25a1cdf30c64274469c243ed72f007b27aa7e32ad2
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.1"
   nested:
     dependency: transitive
     description:
@@ -1374,5 +1382,5 @@ packages:
     source: hosted
     version: "6.5.0"
 sdks:
-  dart: ">=3.5.0 <4.0.0"
+  dart: ">=3.5.3 <4.0.0"
   flutter: ">=3.24.0"

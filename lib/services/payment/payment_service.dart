@@ -1,16 +1,4 @@
-import '../../models/data_user.dart';
-import '../../models/payment/credit_card.dart';
-
-class PaymentService {
-  void authorize({CreditCard? creditCard, num? price, String? orderId, DataUser? dataUser}) {
-    final Map<String, dynamic> dataSale = {
-      'orderId': orderId,
-      'price': price?.toInt(),
-      'descriptor': "Sports CBR",
-      'installments': 1,
-      'creditCard': creditCard!.toMap(),
-      'cpf': dataUser!.cpf,
-      'paymentType': 'CreditCard'
-    };
-  }
-}
+final publicKey = "APP_USR-fb16bfb0-e594-4c46-bb33-9e4b12937f4d";
+final accessToken = "APP_USR-4092734903164911-093020-1fbaf53757b9cdbb0607f982a5a977f1-242199912";
+final clientId = "4092734903164911";
+final clientSecret = "odaSOXn42DhFsEYOAGmfdq1IzVyDl3KT";

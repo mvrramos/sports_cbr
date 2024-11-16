@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import '../../helpers/extensions.dart';
+import 'package:sportscbr/helpers/extensions.dart';
+
 import '../address.dart';
 
 enum StoreStatus {

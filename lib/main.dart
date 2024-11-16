@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sportscbr/models/payment/payment_manager.dart';
 // import 'package:sportscbr/screens/checkout/checkout_screen.dart';
 import 'package:sportscbr/screens/confirmation/confirmation_screen.dart';
 import 'package:sportscbr/screens/edit_product/edit_product_screen.dart';
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => ProductManager(), lazy: false),
         ChangeNotifierProvider(create: (_) => HomeManager(), lazy: false),
         ChangeNotifierProvider(create: (_) => StoresManager()),
+        ChangeNotifierProvider(create: (_) => PaymentManager(), lazy: false),
         ChangeNotifierProxyProvider<UserManager, CartManager>(
           create: (_) => CartManager(),
           lazy: false,

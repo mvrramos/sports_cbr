@@ -6,7 +6,6 @@
 // import 'package:sportscbr/models/checkout_manager.dart';
 // import 'package:sportscbr/models/payment/credit_card.dart';
 // import 'package:sportscbr/screens/checkout/components/credit_card_widget.dart';
-// import 'package:url_launcher/url_launcher.dart';
 
 // class CheckoutScreen extends StatelessWidget {
 //   CheckoutScreen({super.key});
@@ -59,24 +58,6 @@
 //                     onPressed: () async {
 //                       if (formKey.currentState!.validate()) {
 //                         formKey.currentState!.save();
-
-//                         try {
-//                           Response<Map> response;
-//                           response = await dio.post('http://10.0.2.2:3000/create_preferences');
-//                           final res = response.data;
-
-//                           if (res != null && res.containsKey("url")) {
-//                             final String url = res["url"];
-
-//                             if (await canLaunchUrl(Uri.parse(url))) {
-//                               await launchUrl(Uri.parse(url));
-//                             } else {
-//                               throw 'Could not launch $url';
-//                             }
-//                           }
-//                         } catch (e) {
-//                           print('Erro: $e');
-//                         }
 
 //                         // checkoutManager.checkout(
 //                         //     creditCard: creditCard,
